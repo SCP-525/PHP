@@ -1,0 +1,40 @@
+<include file="Index/header" />
+<h2>个人中心</h2>
+<div class="container" style="margin-bottom: 180px;>
+	<div class="row">
+			<div class="col-lg-6">
+
+				<form class="form-horizontal" id="singcms-form">
+					<div class="form-group">
+						<label  class="col-sm-2 control-label">用户名:</label>
+						<div class="col-sm-5">
+							&nbsp;<?php echo getLoginReadername()?>
+							
+						</div>
+					</div>
+
+					<div class="form-group">
+	
+	
+						<label  class="col-sm-2 control-label">个人邮箱:</label>
+						<!--<h1>{$name}</h1>-->
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="reader_email" id="inputPassword3" placeholder="" value="{$email.reader_email}">
+						</div>
+					</div>
+					
+
+
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="button" class="btn btn-default" id="button-submit" onclick="reader.save()">提交</button>
+						</div>
+					</div>
+				</form>
+
+
+			</div>
+		</div>
+</div>
+
+<include file="Index/footer" />

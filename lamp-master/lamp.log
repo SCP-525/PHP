@@ -1,0 +1,196 @@
+[H[J
++-------------------------------------------------------------------+
+| Auto Install LAMP(Linux + Apache + MySQL/MariaDB/Percona + PHP )  |
+| Website: https://lamp.sh                                          |
+| Author : Teddysun <i@teddysun.com>                                |
++-------------------------------------------------------------------+
+
+--------------------- System Information ----------------------------
+
+CPU model            : Intel(R) Core(TM) i5-3317U CPU @ 1.70GHz
+Number of cores      : 1
+CPU frequency        : 1696.189 MHz
+Total amount of ram  : 975 MB
+Total amount of swap : 1021 MB
+System uptime        : 0days, 4:41:43
+Load average         : 0.07, 0.15, 0.35
+OS                   : Ubuntu 16.04 LTS
+Arch                 : x86_64 (64 Bit)
+Kernel               : 4.4.0-21-generic
+Hostname             : ubuntu
+IPv4 address         : 39.159.46.145
+
+---------------------------------------------------------------------
+
+-------------------------- apache setting ---------------------------
+
+[0;32m1[0m) httpd-2.2.32
+[0;32m2[0m) httpd-2.4.25
+[0;32m3[0m) do_not_install
+
+which apache you'd select (default httpd-2.4.25): 
+your selection: httpd-2.4.25
+
+-------------------------- mysql setting ---------------------------
+
+[0;32m1[0m) mysql-5.5.56
+[0;32m2[0m) mysql-5.6.36
+[0;32m3[0m) mysql-5.7.18
+[0;32m4[0m) mariadb-5.5.56
+[0;32m5[0m) mariadb-10.0.31
+[0;32m6[0m) mariadb-10.1.23
+[0;32m7[0m) Percona-Server-5.5.55-38.8
+[0;32m8[0m) Percona-Server-5.6.36-82.0
+[0;32m9[0m) Percona-Server-5.7.18-14
+[0;32m10[0m) do_not_install
+
+which mysql you'd select (default mariadb-10.1.23): 
+your selection: mysql-5.6.36
+
+mysql data location(default:/usr/local/mysql/data, leave blank for default): 
+mysql-5.6.36 data location: /usr/local/mysql/data
+
+mysql server root password (default:root, leave blank for default): 
+mysql-5.6.36 root password: root
+
+-------------------------- php setting ---------------------------
+
+[0;32m1[0m) php-5.3.29
+[0;32m2[0m) php-5.4.45
+[0;32m3[0m) php-5.5.38
+[0;32m4[0m) php-5.6.30
+[0;32m5[0m) php-7.0.19
+[0;32m6[0m) php-7.1.5
+[0;32m7[0m) do_not_install
+
+which php you'd select (default php-5.6.30): 
+your selection: php-5.6.30
+
+php-5.6.30 available modules:
+
+-------------------------- php_modules install --------------------------
+
+[0;32m1[0m) ZendGuardLoader
+[0;32m2[0m) ioncube_loaders
+[0;32m3[0m) xcache-3.2.0
+[0;32m4[0m) php-imagick-3.4.3
+[0;32m5[0m) php-gmagick-1.1.7RC3
+[0;32m6[0m) php-memcached-3.0.3
+[0;32m7[0m) php-redis-2.2.8
+[0;32m8[0m) php-mongodb-1.2.8
+[0;32m9[0m) php-swoole-2.0.7
+[0;32m10[0m) xdebug-2.5.3
+[0;32m11[0m) do_not_install
+
+Please input one or more number between 1 and 11 (default do_not_install) (for example: 1 2 3): 
+your selection: do_not_install
+
+-------------------------- phpmyadmin setting ---------------------------
+
+[0;32m1[0m) phpMyAdmin-4.7.0-all-languages
+[0;32m2[0m) do_not_install
+
+which phpmyadmin you'd select (default phpMyAdmin-4.7.0-all-languages): 
+your selection: phpMyAdmin-4.7.0-all-languages
+[H[J
+------------------------- Install Overview --------------------------
+
+Apache: httpd-2.4.25
+Apache Location: /usr/local/apache
+
+MySQL: mysql-5.6.36
+MySQL Location: /usr/local/mysql
+MySQL Data Location: /usr/local/mysql/data
+MySQL Root Password: root
+
+PHP: php-5.6.30
+PHP Location: /usr/local/php
+
+phpMyAdmin: phpMyAdmin-4.7.0-all-languages
+phpMyAdmin Location: /data/www/default/phpmyadmin
+
+---------------------------------------------------------------------
+
+Press any key to start...or Press Ctrl+C to cancel
+
+[[0;32mInfo[0m] Starting to sync time...
+[[0;32mInfo[0m] Sync time completed...
+[[0;32mInfo[0m] Start time: 2017-05-24 21:59:27
+[[0;32mInfo[0m] Starting to install tools...
+[[0;32mInfo[0m] Install tools completed...
+[[0;32mInfo[0m] Starting remove the conflict packages...
+[[0;32mInfo[0m] Remove the conflict packages completed...
+[[0;32mInfo[0m] /usr/local/apache already exists, skipped the installation.
+[[0;32mInfo[0m] /usr/local/mysql already exists, skipped the installation.
+[[0;32mInfo[0m] /usr/local/php already exists, skipped the installation.
+[[0;32mInfo[0m] phpMyAdmin-4.7.0-all-languages install start...
+[[0;32mInfo[0m] phpMyAdmin-4.7.0-all-languages.tar.gz not found, download now...
+[[0;32mInfo[0m] phpMyAdmin-4.7.0-all-languages.tar.gz download completed...
+[[0;32mInfo[0m] phpMyAdmin-4.7.0-all-languages install completed...
+[[0;32mInfo[0m] Starting clean up...
+[[0;32mInfo[0m] Clean up completed...
+
+Congratulations, LAMP install completed!
+
+------------------------ Installed Overview -------------------------
+
+Default Website: http://39.159.46.145
+Apache: httpd-2.4.25
+Apache Location: /usr/local/apache
+
+MySQL Server: mysql-5.6.36
+MySQL Location: /usr/local/mysql
+MySQL Data Location: /usr/local/mysql/data
+MySQL Root Password: root
+
+PHP: php-5.6.30
+PHP Location: /usr/local/php
+
+PHP Modules: do_not_install
+
+phpMyAdmin: phpMyAdmin-4.7.0-all-languages
+phpMyAdmin Location: /data/www/default/phpmyadmin
+
+---------------------------------------------------------------------
+
+Starting Apache...
+Starting Database...
+激活Internet连接 (仅服务器)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.1.1:53            0.0.0.0:*               LISTEN      1142/dnsmasq    
+tcp6       0      0 :::80                   :::*                    LISTEN      94741/httpd     
+tcp6       0      0 :::3306                 :::*                    LISTEN      95181/mysqld    
+活跃的UNIX域套接字 (仅服务器)
+Proto RefCnt Flags       Type       State         I-Node   PID/Program name    路径
+unix  2      [ ACC ]     流        LISTENING     22073    1983/gnome-session- @/tmp/.ICE-unix/1983
+unix  2      [ ACC ]     流        LISTENING     21207    1793/systemd        /run/user/1000/systemd/private
+unix  2      [ ACC ]     SEQPACKET  LISTENING     10983    1/init              /run/udev/control
+unix  2      [ ACC ]     流        LISTENING     21218    1800/gnome-keyring- /run/user/1000/keyring/control
+unix  2      [ ACC ]     流        LISTENING     21532    1800/gnome-keyring- /run/user/1000/keyring/pkcs11
+unix  2      [ ACC ]     流        LISTENING     21536    1800/gnome-keyring- /run/user/1000/keyring/ssh
+unix  2      [ ACC ]     流        LISTENING     21564    1948/gpg-agent      /home/zhou/.gnupg/S.gpg-agent
+unix  2      [ ACC ]     流        LISTENING     10976    1/init              /run/systemd/private
+unix  2      [ ACC ]     流        LISTENING     10980    1/init              /run/systemd/fsck.progress
+unix  2      [ ACC ]     流        LISTENING     10987    1/init              /run/systemd/journal/stdout
+unix  2      [ ACC ]     流        LISTENING     22184    2098/pulseaudio     /run/user/1000/pulse/native
+unix  2      [ ACC ]     流        LISTENING     17517    1112/Xorg           @/tmp/.X11-unix/X0
+unix  2      [ ACC ]     流        LISTENING     22074    1983/gnome-session- /tmp/.ICE-unix/1983
+unix  2      [ ACC ]     流        LISTENING     13959    1/init              /var/run/cups/cups.sock
+unix  2      [ ACC ]     流        LISTENING     21767    2005/dbus-daemon    @/tmp/dbus-PL8cHCPAmU
+unix  2      [ ACC ]     流        LISTENING     13960    1/init              /var/run/dbus/system_bus_socket
+unix  2      [ ACC ]     流        LISTENING     13961    1/init              /run/uuidd/request
+unix  2      [ ACC ]     流        LISTENING     13967    1/init              /run/snapd.socket
+unix  2      [ ACC ]     流        LISTENING     13968    1/init              /run/acpid.socket
+unix  2      [ ACC ]     流        LISTENING     13969    1/init              /var/run/avahi-daemon/socket
+unix  2      [ ACC ]     流        LISTENING     23031    1944/fcitx          /tmp/fcitx-socket-:0
+unix  2      [ ACC ]     流        LISTENING     17548    979/NetworkManager  /var/run/NetworkManager/private-dhcp
+unix  2      [ ACC ]     流        LISTENING     21354    1802/upstart        @/com/ubuntu/upstart-session/1000/1802
+unix  2      [ ACC ]     流        LISTENING     21426    1886/dbus-daemon    @/tmp/dbus-S2swVCIrIJ
+unix  2      [ ACC ]     流        LISTENING     344411   95181/mysqld        /tmp/mysql.sock
+unix  2      [ ACC ]     流        LISTENING     17518    1112/Xorg           /tmp/.X11-unix/X0
+unix  2      [ ACC ]     流        LISTENING     21694    1992/dbus-daemon    @/tmp/dbus-XLO9syG0Mq
+
+Start time     : 2017-05-24 21:59:27
+Completion time: 2017-05-24 22:00:43 (Use:[0;31m 1[0m minutes)
+Welcome to visit our website: https://lamp.sh
+Enjoy it

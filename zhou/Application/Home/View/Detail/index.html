@@ -1,0 +1,53 @@
+<include file="Index/header" />
+<?php $vo = $result['news'];
+?>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9 col-md-9">
+
+					<div class="news-detail">
+						<h1>{$vo.title}</h1>
+
+						{$vo.content}
+					</div>
+					
+				</div>
+				
+				<include file="Index/right" />
+				<!-- end right-->
+			</div>
+			<div >
+				<h4 style="color: burlywood;">评论</h4>
+				<form method="post" id='form'>
+					<label style="margin-top: 25px;"><b style="color: cadetblue;"><?php echo getLoginReadername()?></b></label>
+					<textarea placeholder="不吐槽不快乐" name="content" style="width:700px;height:70px; vertical-align:top;" rows="3" maxlength="100" ></textarea>
+		
+					<input type="hidden" name='news_id' value="{$id}" />
+					<button style="margin-top: 25px;" type="button" class="btn btn-default" id="singcms-button" onclick="detail.tc()">发表</button>
+					
+
+				</form>
+				<hr />
+				<div class="line" id="tc_block" style="padding:10px 0;">
+                       
+                    <volist name='tc' id='tc'>
+                    	
+                    		<h4 style="color: cadetblue;">{$tc.readername}：</h4>
+                        	<label class="" id=""style="width:700px;height:40px;outline-style: solid;outline-color: wheat;">{$tc.tc_content}</label>
+                        	<span class="time" style="margin-top: 25px;">{$Think.now}</span>
+                       
+                        
+                    </volist>
+                    
+                    <!--<script>
+                        $("#tc").append("<h4 style="color: cadetblue;">{$tc.readername}：</h4>");
+                    </script>-->
+				</div>
+            	
+			</div>
+			<!---->
+		</div>
+	</section>
+<include file="Index/footer" />
+ 

@@ -1,0 +1,97 @@
+<?php
+   $config = D("Basic")->select();
+   $navs = D("Menu")->getBarMenus();
+ 
+ 	$name=getLoginReadername();
+   $res=D("Home")->getLoginByReaderId($name);
+?>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{$config.title}</title>
+  <meta name="keywords" content="{$config.keywords}" />
+  <meta name="description" content="{$config.description}" />
+  <link rel="stylesheet" href="/Public/css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="/Public/css/home/main.css" type="text/css" />
+  <script src="/Public/js/jquery.js"></script>
+</head>
+<body>
+<header id="header" >
+  <div class="navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="/">
+          <img src="/Public/images/logo.png" alt="">
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="/" <if condition="$result['catId'] eq 0">class="curr"</if>>首页</a></li>
+        <foreach name="navs" item="vo">
+          <li><a href="/index.php?c=cat&id={$vo.menu_id}" <if condition="$vo['menu_id'] eq $result['catId']">class="curr"</if>>{$vo.name}</a></li>
+        </foreach>	
+		<li>
+			<form method="get" style="margin-top:43px;" >	
+      			<input style="font: '微软雅黑';color: chocolate;" type="text" class="search_text " name="search" value="{$news}" placeholder="搜索"><button class="search_btn" onclick="">站内搜索</button>	
+      		</form>	
+		</li>
+      </ul>
+      	
+       	    
+			<ul class="nav navbar-right top-nav" style="margin-top:32px;">
+				<li style="float: left;">
+					<a href="/index.php?c=reader&a=login">
+						<button class="btn btn-primary btn-lg"  data-toggle="modal" data-target="#myModal1"  >
+   				 		登录
+						</button>
+					</a>
+				</li>
+    			<li style="float: left;">
+    				<a href="/index.php?c=reader&a=registe">
+						<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"  >
+    	 				注册
+						</button>
+					</a>
+    			</li>
+			    <li style="float: left;">
+			      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><?php echo getLoginReadername()?></b><b class="caret"></b></a>
+			      <input type="hidden" id='readername' value="<?php echo getLoginReadername()?>" />
+			      <ul class="dropdown-menu">
+			        <li>
+			          <a href="/index.php?c=reader&a=reader&id={$res['reader_id']}"> 个人中心</a>
+			        </li>
+			       
+			        <li class="divider"></li>
+			        <li>
+			          <a href="/index.php?c=reader&a=loginout"> 退出</a>
+			        </li>
+			      </ul>
+			    </li>
+		    </ul>
+      	
+			     
+			     
+    </div>
+  </div>
+</header>
+<script src="/Public/js/jquery.js"></script>
+<script>
+	
+	//show()
+
+// if ({$homeReader}){
+// 	console.log('name',{$homeReader});
+// 	$('.btn').hide();
+// }
+   
+   
+   	//show()
+   	var $readername=$('#readername').val();
+
+   if ($readername){
+// 	console.log('name',{$homeReader});
+   	$('.btn').hide();
+   	
+   }
+   else{$('.caret').hide();}
+</script>

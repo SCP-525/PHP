@@ -1,0 +1,94 @@
+<include file="Index/header" />
+<body>
+
+<div id="wrapper">
+
+    <include file="Index/nav"/>
+
+    <div id="page-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-dashboard"></i>  <a href="/admin.php?c=admin">吐槽管理</a>
+                    </li>
+                   
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+       
+        <div class="row">
+            <div class="col-lg-6">
+                <h3></h3>
+                <div class="table-responsive">
+            <form id="singcms-listorder">
+              <table class="table table-bordered table-hover singcms-table">
+                <thead>
+                <tr>             
+                  <th>id</th>
+                  <th>news_id</th>
+                  <th>吐槽内容</th>
+                  <!--<th>栏目</th>-->
+                  <th>时间</th>
+                  <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <volist name="tc" id="tc">
+                  <tr>
+                    
+                    <td>{$tc.tc_id}</td>
+                    <td>{$tc.news_id}</td>
+                    <td>{$tc.tc_content}</td>
+                    <!--<td>{$tc.catid|getCatName=$webSiteMenu,###}</td>-->
+                    <td>{$tc.create_time|date="Y-m-d H:i",###}</td>
+                    <td>
+                      <a href="javascript:void(0)" id="singcms-delete"  attr-id="{$tc.tc_id}"  attr-message="删除">
+                        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                      </a>
+                      <a target="_blank" href="/index.php?c=detail&a=view&id={$tc.news_id}" class="sing_cursor glyphicon glyphicon-eye-open" aria-hidden="true"  ></a>
+
+                    </td>
+                  </tr>
+                </volist>
+
+                </tbody>
+              </table>
+              <nav>
+
+              
+            </nav>
+             
+            </form>
+                    
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+<!-- Morris Charts JavaScript -->
+<script>
+    var SCOPE = {
+        
+        'set_status_url' : '/admin.php?c=tucao&a=setStatus',
+        'index_url' : '/',
+
+    }
+</script>
+
+<include file="Index/footer" />

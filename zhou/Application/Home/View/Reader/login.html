@@ -1,0 +1,18 @@
+<include file="Index/header" />
+<h2>用户登录</h2>
+<div class="container-fluid" style="margin-bottom: 180px;">
+	<form method="post"  enctype="multipart/form-data">
+  		<div class="form-group">
+    		<label>用户名</label>
+    		<input type="text" class="form-control" name="readername" id="readername" placeholder="输入用户名">
+  		</div>
+  		<div class="form-group">
+    		<label>密码</label>
+    		<input type="password" class="form-control" name="readerpwd" id="readerpwd" placeholder="输入密码">
+  		</div>
+  		
+  		<button type="button" class="btn btn-default" onclick="login.check()">登录</button>
+	</form>
+</div>
+
+<include file="Index/footer" />
